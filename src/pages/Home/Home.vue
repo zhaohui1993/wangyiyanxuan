@@ -14,7 +14,7 @@
           </div>
 
         </div>
-        <div class="login" @click="$router.push('/login')">登陆</div>
+        <div class="login" @click="$router.push('/profile')">登陆</div>
       </div>
       <div id="contener">
         <div class="mask" v-show="isMaskShow"></div>

@@ -7,9 +7,9 @@ import Catagory from '../pages/Catagory/Catagory.vue'
 import Home from '../pages/Home/Home.vue'
 import Profile from '../pages/Profile/Profile.vue'
 import Search from '../pages/Search/Search.vue'
-import Login from '../pages/Login/Login.vue'
 import Recommend from '../pages/Recommend/Recommend.vue'
-// import CatagoryList from '../pages/Catagory/catagoryList.vue'
+import LoginMethods from '../pages/loginMethods/loginMethods.vue'
+import Tab from '../pages/Recommend/tab.vue'
 
 export default [
   {
@@ -40,6 +40,19 @@ export default [
   {
     path:'/recommend',
     component: Recommend,
+    children :[{
+      path: '/recommend/tab/:id',
+      component: Tab,
+      meta: {
+        showFooter: true
+      }
+    },
+      //重定向
+      {
+        path: '/',
+        redirect: '/recommend/tab/0'
+      }
+    ],
     meta: {
       showFooter: true
     }
@@ -49,8 +62,8 @@ export default [
     component: Search
   },
   {
-    path:'/login',
-    component: Login
+    path:'/login/:id',
+    component:LoginMethods
   },
   {
     path:'/',

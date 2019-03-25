@@ -39,7 +39,11 @@
         async mounted () {
             await this.$store.dispatch('getCatagorysList')
             let leftWrap = new Bscroll ('.contener-left-wrap',{
-                click: true
+                click: true,
+                scrollbar: {
+                  fade: true,
+                  interactive: false // 1.8.0 新增
+                },
             })
             let rightWrap = new Bscroll ('.contener-right-wrap',{
               click: true
