@@ -1,5 +1,6 @@
 <template>
     <div>
+
       <div id="header">
         <a href="javascript:;" class="logo">
           <h1>
@@ -343,8 +344,6 @@
           </div>
 
       </div>
-
-
     </div>
 </template>
 
@@ -370,6 +369,11 @@
           let scroll = new BScroll('.list-wrap', {
             scrollX: true,
             click: true
+          })
+          window.addEventListener('scroll',  () =>  {
+            let scrollTop = window.pageYOffset || document.documentElement.scrollTop ||
+              document.body.scrollTop
+            console.log("gao",scrollTop)
           })
 
           await this.$store.dispatch('getHomeList')
@@ -450,7 +454,8 @@
           goSearchPages () {
 //              console.log('search')
             this.$router.push('/search')
-          }
+          },
+
 
         },
         computed: {
@@ -688,9 +693,13 @@
         width 750px
         height 158.92px
         background-color #F78E00
+        overflow hidden
+        &:hover img
+          transform: scale(1.4);
         img
           width 750px
           height 158.92px
+
       .shoppingGuide
         height 611.84px
         width 100%

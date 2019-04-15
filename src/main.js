@@ -4,6 +4,9 @@
 import Vue from 'vue'
 import 'lib-flexible/flexible'
 import VueLazyload from 'vue-lazyload'
+// import ElementUI from 'element-ui';
+// import 'element-ui/lib/theme-chalk/index.css';
+
 
 import App from './App.vue'
 import router from './router'
@@ -16,8 +19,11 @@ import loading from './comments/img/timg (1).gif'
 import error from './comments/img/timg.gif'
 import CatagoryModules from './components/catagoryModule/catagoryModule.vue'
 
-
-
+// Vue.use(ElementUI);
+import { Button, Select, Row } from 'element-ui';
+Vue.component(Button.name, Button);
+Vue.component(Select.name, Select);
+Vue.component(Row.name, Row);
 Vue.use(VueLazyload, {
   loading,
   error
